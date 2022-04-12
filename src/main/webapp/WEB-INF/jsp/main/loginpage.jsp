@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>blog</title>
+<title>로그인</title>
+
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
@@ -20,21 +21,21 @@
 
 </head>
 <body>
-
 	<div id="wrap">
-		<div>
 			<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 			<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
 			
-			<section>
-				<img src="/static/img/food.jpg" width="1000" height="600">
-			</section>
 			
+				<div>
+					<form class="form-group">
+						<input type="text"  class="form-control mt-3" >
+						<input type="password" class="form-control mt-3" >
+						<button type="submit" class="btn btn-info btn-block mt-3">LOGIN</button>
+					</form>
+				</div>
+				
 			<c:import url="/WEB-INF/jsp/common/footer.jsp"/>
-			
-		</div>
-	</div>
-
+	</div>	
 
 </body>
 </html>

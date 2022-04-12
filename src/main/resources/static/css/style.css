@@ -6,6 +6,20 @@
 }
 
 header{
-	height:70px;
-	backgroud-color: #bbc7c0;
+	height:100px;
+	backgroud-color: rgb(198, 182, 93);
+}
+
+
+
+
+nav{
+	height:50px;
+	font-size:large;
+	
+	
+}
+
+section{
+	height:800px;
 }
