@@ -26,11 +26,11 @@
 			<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
 			
 			
-				<div>
+				<div class="center">
 					<form class="form-group">
-						<input type="text"  class="form-control mt-3" >
-						<input type="password" class="form-control mt-3" >
-						<button type="submit" class="btn btn-info btn-block mt-3">LOGIN</button>
+						<input type="text"  class="form-control mt-5 " placeholder="아이디 입력">
+						<input type="password" class="form-control mt-3 " placeholder="비밀번호 입력">
+						<button type="submit" class="btn btn-warning btn-block mt-3 ">LOGIN</button>
 					</form>
 				</div>
 				

@@ -14,15 +14,6 @@ public class MainpageController {
 		return "main/mainpage";
 	}
 	
-	@GetMapping("/loginpage")
-	public String login() {
-		return "main/loginpage";
-	}
-	
-	@GetMapping("/signuppage")
-	public String signup() {
-		return "main/signup";
-	}
 	
 	
 }

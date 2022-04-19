@@ -5,13 +5,15 @@
 			<header >
 				<div class="d-flex justify-content-between">
 					
-					<a href="/main/mainpage">
-					<img src="/static/img/logo.png" width="150">
-					</a>
+					<div class="text-align:center">
+						<a href="/main/mainpage">
+						<img src="/static/img/logo.png" width="150" >
+						</a>
+					</div>
 					
 					<div class="d-flex mt-5">
-						<a href="/main/loginpage">로그인 |</a>
-						<a href="/main/signuppage"> 회원가입</a>
+						<a href="/user/loginpage">로그인 |</a>
+						<a href="/user/signuppage"> 회원가입</a>
 					</div>
 					
 				</div>
