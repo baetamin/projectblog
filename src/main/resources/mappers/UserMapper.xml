@@ -31,4 +31,18 @@
   	
   	</insert>
   
+  
+  	<select id="selectCountLoginId" parameterType="String" resultType="int">
+  		
+  		SELECT
+  			count(1)
+  		FROM
+  			`bloguser`
+  			
+  		WHERE
+  			`loginId` = #{loginId}
+  	
+  	</select>
+  
+  
   </mapper>

@@ -21,21 +21,54 @@
 
 </head>
 <body>
+
 	<div id="wrap">
 			<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 			<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
 			
-			
+			<form id="loginForm">
 				<div class="center">
-					<form class="form-group">
-						<input type="text"  class="form-control mt-5 " placeholder="아이디 입력">
-						<input type="password" class="form-control mt-3 " placeholder="비밀번호 입력">
+						
+						<input type="text" id="loginIdInput" class="form-control mt-5 " placeholder="아이디 입력">
+						<input type="password" id="passwordInput" class="form-control mt-3 " placeholder="비밀번호 입력">
 						<button type="submit" class="btn btn-warning btn-block mt-3 ">LOGIN</button>
-					</form>
+					
 				</div>
+			</form>
+			
 				
 			<c:import url="/WEB-INF/jsp/common/footer.jsp"/>
 	</div>	
+
+<script>
+	$(document).ready(function(){
+		$("#loginForm").on("submit",function(e){
+			
+			e.preventDefault();
+			
+			let loginId = $("#loginIdInput").val();
+			let password = $("#passwordInput").val();
+			
+			if(loginId == ""){
+				alert("아이디를 입력하세요")
+				return;
+			}
+			if(password = ""){
+				alert("비밀번호를 입력하세요")
+				return;
+			}
+			
+			
+			
+		});
+	});
+
+</script>
+
+
+
+
+
 
 </body>
 </html>

@@ -23,8 +23,18 @@ img{
 	width:30%;
 	margin-left:35%;
 }	
-
-
+.contentcenter{
+	display:d-flex;
+	justify-content:between;
+	align-items : center;
+	
+	margin-left:20%;
+}
+.box{
+	width:100px;
+	height:100px;
+	background-color:yellow;
+}
 
 nav{
 	

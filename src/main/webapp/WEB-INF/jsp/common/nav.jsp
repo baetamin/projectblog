@@ -17,9 +17,9 @@
 						<li class="nav-item">
 						<a class="nav-link-BestStore" href="#">BestStore</a>
 						</li>
-						
+			
 						<li class="nav-item">
-						<a class="nav-link-WRITE REVIEW" href="#">WRITE REVIEW</a>
+						<a class="nav-link-WRITE REVIEW" href="/review/write">WRITE REVIEW</a>
 						</li>
 						
 						<li class="nav-item">

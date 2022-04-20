@@ -30,7 +30,7 @@
 					
 						<div class="d-flex">
 							<input type="text" id="idInput" class="form-control mt-5" placeholder="아이디 입력">
-							<button type="button" class="button btn btn-block btn-outline-warning ml-2 mt-5 col-3 btn-sm">중복확인</button>
+							<button type="button" id="isDuplicateBtn" class="button btn btn-block btn-outline-warning ml-2 mt-5 col-3 btn-sm">중복확인</button>
 							
 						</div>
 						<div id="duplicateText" class="d-none"><small class="text-danger">중복된 ID 입니다</small></div>
@@ -53,6 +53,20 @@
 
 	<script>
 		$(document).ready(function(){
+			var isDuplicate = true;
+			var isChecked = false;
+			
+			$("#idInput").on("input",function(){
+				
+				isChecked = false;
+				isDupuplicate = true;
+				
+				$("#duplicateText").addClass("d-none");
+				$("#possibleText").addClass("d-none");
+				
+			});
+			
+			
 			$("#signUpBtn").on("click",function(){
 				let loginId = $("#idInput").val();
 				let password = $("#passwordInput").val();
@@ -64,6 +78,15 @@
 					alert("아이디를 입력하세요");
 					return;
 				}
+				if(isChecked == false){
+					alert("중복확인 하세요 ");
+					return;
+				}
+				if(isDuplicate == true){
+					alert("중복된 아이디입니다")
+					return;
+				}
+				
 				if(password == "" ){
 					alert("비밀번호를 입력하세요");
 					return;
@@ -98,8 +121,48 @@
 				});
 				
 			});
+			
+			$("#isDuplicateBtn").on("click",function(){
+				var loginId = $("#idInput").val();		
 				
+				if(loginId == ""){
+					alert("아이디를 입력하세요");
+					return;
+				}
 				
+				$.ajax({
+					type:"get",
+					url:"/user/duplicate_id",
+					data:{"loginId":loginId},
+					
+					success:function(data){
+						isChecked = true;
+						
+						$("#duplicateText").addClass("d-none");
+						$("#possibleText").addClass("d-none");
+						
+						
+						if(data.is_duplicate){
+							$("#duplicateText").removeClass("d-none");
+
+						}else{
+							$("#possibleText").removeClass("d-none");
+						}
+						
+						isDuplicate = data.is_duplicate;
+						
+					},
+					error:function(){
+						alert("중복확인 에러")
+					}
+					
+				});
+			});
+			
+				
+			
+			
+			
 				
 			
 		});
