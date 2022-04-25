@@ -40,30 +40,49 @@
 			<c:import url="/WEB-INF/jsp/common/footer.jsp"/>
 	</div>	
 
-<script>
-	$(document).ready(function(){
-		$("#loginForm").on("submit",function(e){
+	<script>
+		$(document).ready(function(){
 			
-			e.preventDefault();
-			
-			let loginId = $("#loginIdInput").val();
-			let password = $("#passwordInput").val();
-			
-			if(loginId == ""){
-				alert("아이디를 입력하세요")
-				return;
-			}
-			if(password = ""){
-				alert("비밀번호를 입력하세요")
-				return;
-			}
-			
-			
+			$("#loginForm").on("submit",function(e){
+				
+				e.preventDefault();
+				
+				let loginId = $("#loginIdInput").val();
+				let password = $("#passwordInput").val();
+				
+				if(loginId == ""){
+					alert("아이디를 입력하세요")
+					return;
+				}
+				if(password == ""){
+					alert("비밀번호를 입력하세요")
+					return;
+				}
+				
+				
+				$.ajax({
+					type:"post",			
+					url:"/user/sign_in",
+					data:{"loginId":loginId, "password":password},
+					success:function(data){
+						if(data.result == "success"){
+							location.href = "/main/mainpage"
+						}else{
+							alert("아이디 비밀번호를 확인하세요");
+						}
+					}
+					,error:function(e){
+						alert("로그인 실패");
+					}
+				
+				
+				});
+				
+			});
 			
 		});
-	});
-
-</script>
+	
+	</script>
 
 
 

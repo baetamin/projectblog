@@ -91,6 +91,10 @@
 					alert("비밀번호를 입력하세요");
 					return;
 				}
+				if(password != "passwordConfirmInput"){
+					alert("비밀번호를 재 확인 하세요");
+					return;
+				}
 				if(nickname == ""){
 					alert("닉네임을 입력하세요");
 					return;

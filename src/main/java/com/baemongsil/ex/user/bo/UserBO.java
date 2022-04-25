@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.baemongsil.ex.common.EncryptUtils;
 import com.baemongsil.ex.user.dao.UserDAO;
+import com.baemongsil.ex.user.model.User;
 
 
 
@@ -37,6 +38,14 @@ public class UserBO {
 		 }else	{
 			 return true;
 		 }
+	}
+	
+	public User signIn(String loginId, String password) {
+		
+		String encryptPassword = EncryptUtils.md5(password);
+		
+		return userDAO.selectUser(loginId, encryptPassword);
+		
 	}
 	
 	

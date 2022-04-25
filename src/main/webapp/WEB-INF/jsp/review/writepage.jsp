@@ -58,10 +58,20 @@
 							<input type="text" id="actorInput" class="form-control mt-3 " placeholder="출연 배우">
 							<input type="text" id="dayInput" class="form-control mt-3" placeholder="방명 일자">
 						 </div>
+						 
+						  <div class="form-group button3div d-none">
+							<input type="text" id="storeInput" class="form-control" placeholder="상호 입력">
+							<input type="text" id="addressInput" class="form-control mt-3 " placeholder="주소 입력">
+							
+						 </div>
 						
 						<div>
 						    <label for="exampleFormControlTextarea1"></label>
 						    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+					  </div>
+					  
+					  <div>
+					  	<button type="button" id="uploadBtn"class="btn btn-warning mt-3 ml-5 col-5">올리기</button>
 					  </div>
 			</div>
 		
@@ -79,13 +89,72 @@
 				
 				var result = $('#inputGroupSelect01 option:selected').val();
 				
+				$('.button1div').addClass('d-none');
+				$('.button3div').addClass('d-none');
+				$('.button2div').addClass('d-none');
+				
 				if(result == 'button2') {
 					$('.button2div').removeClass('d-none');
-					$('.button1div').addClass('d-none');
-				}else{
-					$('.button2div').hide();
+					
+					
 				}
+				if(result =='button3')	{
+					$(".button3div").removeClass("d-none");
+					
+				}
+				
+				if(result == 'button1'){
+					$(".button1div").removeClass("d-none");
+					
+				}
+				
 			});
+			
+			
+			$("#uploadBtn").on("click",function(){
+				let bookTitle = $("#BookTitleInput").val();
+				let author = $("#authorInput").val();
+				let Publisher = $("#PublisherInput").val();
+				let content = $("#exampleFormControlTextarea1").val();
+				
+				if(bookTitle == ""){
+					alert("제목을 입력하세요");
+					return;
+				}
+				if(author == ""){
+					alert("작가를 입력하세요");
+					return;
+				}
+				if(Publisher == ""){
+					alert("출판사를 입력하세요");
+					return;
+				}
+				if(content == ""){
+					alert("내용을 입력하세요");
+					return;
+				}
+				
+				$.ajax({
+					type:"post",
+					url:"/post/bookcreate",
+					data:{"bookTitle" : bookTitle, "author" : author,
+							"Publisher" : Publisher, "content" : content},
+				
+					success:function(data){
+						if(data.result == "success"){
+							alert("업로드 성공");
+						}else{
+							alert("업로드 실패");
+						}
+					},
+					error:function(){
+						alert("실패")
+					}
+				
+				});
+				
+			});
+			
 			
 			
 		});

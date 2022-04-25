@@ -7,7 +7,7 @@
 				
 					<ul class="nav nav-fill ">
 						<li class="nav-item ">
-						<a class="nav-link-BestBook" href="#">BestBook</a>
+						<a class="nav-link-BestBook" href="/list/listpage">BestBook</a>
 						</li>
 						
 						<li class="nav-item">

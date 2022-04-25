@@ -13,4 +13,8 @@ public class ReviewWriteController {
 		return "review/writepage";
 	}
 	
+	@GetMapping("/create")
+	public String bookCreateView() {
+		return "/list/booklist";
+	}
 }

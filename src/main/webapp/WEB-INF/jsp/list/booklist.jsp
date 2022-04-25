@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 
 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
 
 </head>
@@ -27,6 +28,28 @@
 		<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 		<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
 	
+			<div class="mt-5 ">
+				<table class="table ">
+				  <thead class="thead">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">title</th>
+				      <th scope="col">review</th>
+				      <th scope="col">nickname</th>
+				      <th scope="col">like</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				      <td>3239302</td>
+				    </tr>
+				    
+				   </tbody>
+			</div>
 	
 		<c:import url="/WEB-INF/jsp/common/footer.jsp"/>	
 	</div>

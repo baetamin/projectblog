@@ -43,6 +43,9 @@ nav{
 	
 		
 }
+.thead{
+	background-color: gray;
+}
 
 section{
 	height:500px;
