@@ -6,10 +6,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/list")
-public class BookListController {
+public class ListController {
 	
-	@GetMapping("/listpage")
+	@GetMapping("/book/listpage")
 	public String list() {
 		return "list/booklist";
 	}
+	
+	@GetMapping("/videolist")
+	public String videoCreateView() {
+		return "list/videolist";
+				
+	}
+	
+	@GetMapping("/book/detailbooklist")
+	public String detailbook() {
+		return "list/detailbooklist";
+	}
+	
+	
+	
 }

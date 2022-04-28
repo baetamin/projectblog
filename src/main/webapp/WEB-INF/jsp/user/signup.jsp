@@ -91,7 +91,7 @@
 					alert("비밀번호를 입력하세요");
 					return;
 				}
-				if(password != "passwordConfirmInput"){
+				if(password != passwordConfirm){
 					alert("비밀번호를 재 확인 하세요");
 					return;
 				}

@@ -11,7 +11,7 @@
 						</li>
 						
 						<li class="nav-item">
-						<a class="nav-link-BestVideo" href="#">BestVideo</a>
+						<a class="nav-link-BestVideo" href="/list/videolist">BestVideo</a>
 						</li>
 						
 						<li class="nav-item">

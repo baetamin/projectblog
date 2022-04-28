@@ -15,6 +15,13 @@ public class ReviewWriteController {
 	
 	@GetMapping("/create")
 	public String bookCreateView() {
-		return "/list/booklist";
+		return "list/booklist";
 	}
+	
+	@GetMapping("/videocreate")
+	public String videoCreateView() {
+		return "list/videolist";
+	}
+	
+	
 }

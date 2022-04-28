@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,35 +25,29 @@
 
 
 	<div id="wrap">
-	
 		<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 		<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
-			<div>
-				<button type="button" class="btn btn-warning float-right mb-3" ><a href="/list/detailbooklist">자세히 보기</a></button>
-			</div>
+	
 			<div class="mt-5 ">
 				<table class="table ">
 				  <thead class="thead">
-					
-					    <tr>
-					      <th scope="col">순서</th>
-					      <th scope="col">title</th>
-					      <th scope="col">review</th>
-					      <th scope="col">nickname</th>
-					      <th scope="col">like</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					   <c:forEach var="bookwrite" items="${bookwrite }" varStatus="status">
-						    <tr>
-						      <th scope="row">${status.count}</th>
-						      <td>Mark</td>
-						      <td>Otto</td>
-						      <td>@mdo</td>
-						      <td>3239302</td>
-						    </tr>
-						     
-				    	</c:forEach> 
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">title</th>
+				      <th scope="col">review</th>
+				      <th scope="col">nickname</th>
+				      <th scope="col">like</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				      <td>3239302</td>
+				    </tr>
+				    
 				   </tbody>
 			</div>
 	

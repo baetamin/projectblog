@@ -38,5 +38,41 @@
   		
   	
   	</insert>
+  	
+  	<insert id="insertvideoPost" parameterType="map">
+  	
+  		INSERT INTO `videopost`
+  		(
+  			`userid`
+  			,`userName`
+  			,`videoTitle`
+  			,`videoactor`
+  			,`videoday`
+  			,`content`
+  			,`imagePath`
+  			,`createdAt`
+  			,`updatedAt`
+  		)
+  		VALUE
+  		(
+  			#{userid}
+  			,#{userName}
+  			,#{videoTitle}
+  			,#{videoactor}
+  			,#{videoday}
+  			,#{content}
+  			,#{imagePath}
+  			,now()
+  			,now()
+  			
+  		
+  		)
+  	
+  	</insert>
+  	
+  	
+  	<select>
+  	
+  	</select>
   
   </mapper>
