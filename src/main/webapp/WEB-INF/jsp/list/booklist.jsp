@@ -29,29 +29,33 @@
 	
 		<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 		<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
-			<div>
-				<button type="button" class="btn btn-warning float-right mb-3" ><a href="/list/detailbooklist">자세히 보기</a></button>
-			</div>
+			 
 			<div class="mt-5 ">
 				<table class="table ">
 				  <thead class="thead">
 					
 					    <tr>
-					      <th scope="col">순서</th>
+					      <th scope="col">No.</th>
 					      <th scope="col">title</th>
-					      <th scope="col">review</th>
 					      <th scope="col">nickname</th>
-					      <th scope="col">like</th>
+					      <th scope="col">review</th>
+						 <th scope="col">like</th>
+						 <th scope="col"></th>
 					    </tr>
 					  </thead>
 					  <tbody>
-					   <c:forEach var="bookwrite" items="${bookwrite }" varStatus="status">
+					   <c:forEach var="book" items="${booklist}" varStatus="status">
+						   
 						    <tr>
 						      <th scope="row">${status.count}</th>
-						      <td>Mark</td>
-						      <td>Otto</td>
-						      <td>@mdo</td>
-						      <td>3239302</td>
+						      <td><a href="/list/book/detailpage?id=${book.id }"> ${book.bookTitle}</a></td>
+						      <td>${book.userName }</td>
+						      <td>${book.content }</td>
+						      <td>12323</td>
+						     	 <c:if test="${book.userid == userId }">
+						      		<td><button type="button" class="deleteBtn btn btn-danger btn-sm" data-book-id="${book.id}">삭제</button></td>
+								</c:if>
+							</tr>
 						    </tr>
 						     
 				    	</c:forEach> 
@@ -60,6 +64,40 @@
 	
 		<c:import url="/WEB-INF/jsp/common/footer.jsp"/>	
 	</div>
+
+
+	<script>
+		$(document).ready(function() {
+			
+			$(".deleteBtn").on("click", function() {
+				
+				var deleteId = $(this).data("book-id");
+				$.ajax({
+					type:"GET",
+					url:"/list/delete/booklist",
+					data:{"id":deleteId},
+					success:function(data) {
+						if(data.result == "success"){
+							
+							alert("삭제 성공");
+							location.reload();
+							
+						}else{
+							alert("삭제 실패");
+						}
+						
+					}, error:function(e) {
+						alert("삭제 에러");
+					}
+				});
+			});
+			
+			
+		});	
+	</script>
+
+
+
 
 </body>
 </html>

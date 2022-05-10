@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,43 +19,40 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-
-
-
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 
 
 </head>
 <body>
+
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 		<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
 		
 			<div>
-				<button type="button" class="btn btn-warning float-right mb-3" ><a href="/list/book/listpage">간단히 보기</a></button>
+				<button type="button" class="btn btn-warning float-right mb-3" ><a href="/list/video/listpage">간단히 보기</a></button>
 			</div>
 			
 			<div  class="d-flex justify-content-center">
 				<div  class="d-flex align-items-center">
 					<div>
-						<img width="300" height="300" src="${bookpost.imagePath }">
+						<img width="300" height="300" src="${videopost.imagePath }">
 					</div>
 					
 					<div class="mt-3 ml-5">
-						<input type="text" class="form-control" placeholder="닉네임 : ${bookpost.userName }">
-						<input type="text" class="form-control" placeholder="책 제목 : ${bookpost.bookTitle }">
-						<input type="text" class="form-control" placeholder="작가 : ${bookpost.bookWriter }">
-						<input type="text" class="form-control" placeholder="출판사 : ${bookpost.bookPublisher }">
-						<input type="text" class="form-control" placeholder="${bookpost.content }">
+						<input type="text" class="form-control" placeholder="닉네임 : ${videopost.userName }">
+						<input type="text" class="form-control" placeholder="제목 : ${videopost.videoTitle }">
+						<input type="text" class="form-control" placeholder="출연배우 : ${videopost.videoactor }">
+						<input type="text" class="form-control" placeholder="방영일자: ${videopost.videoday }">
+						<input type="text" class="form-control" placeholder="${videopost.content }">
 					</div>
 					
+					<button class="btn btn-outline-warning ml-3"><h3><i class="bi bi-hand-thumbs-up "></h3></i></button>
 				</div>
 			</div>
-				
+					
 			<div>
 				<hr>
-					<button class="btn btn-outline-warning"><h2><i class="bi bi-hand-thumbs-up "></h2></i></button>
 				<div class="d-flex">
 					<input type="text" class="form-control mt-3 " placeholder="댓글쓰기">
 					<button type="button" class="btn btn-warning ml-2"><i class="bi bi-pencil"></i></button>
@@ -62,6 +60,8 @@
 			</div>
 		
 		<c:import url="/WEB-INF/jsp/common/footer.jsp"/>	
+	
+	
 	
 	</div>
 

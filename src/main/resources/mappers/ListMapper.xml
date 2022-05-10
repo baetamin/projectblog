@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+  <mapper namespace="com.baemongsil.ex.list.dao.ListDAO">
+  
+  <select id="selectBookList" resultType="com.baemongsil.ex.list.model.BookPost">
+  
+  	SELECT
+  		`id`
+  		,`userid`
+  		,`userName`
+  		,`bookTitle`
+  		,`bookWriter`
+  		,`bookPublisher`
+  		,`content`
+  		,`imagePath`
+  		,`createdAt`
+  		,`updatedAt`
+  	FROM
+  	 	`bookpost`
+  	 
+  
+  </select>
+  
+  <select id="selectBookPost" parameterType="int" resultType="com.baemongsil.ex.list.model.BookPost" >
+  
+  	SELECT
+  		`id`
+  		,`userid`
+  		,`userName`
+  		,`bookTitle`
+  		,`bookWriter`
+  		,`bookPublisher`
+  		,`content`
+  		,`imagePath`
+  		,`createdAt`
+  		,`updatedAt`
+  	FROM
+  	 	`bookpost`
+  
+  	WHERE
+  		`id` = #{id}
+  
+  
+  </select>
+  
+  <select id="selectVideoList" resultType="com.baemongsil.ex.list.model.VideoPost">
+  	
+  	SELECT
+  		`id`
+  		,`userid`
+  		,`userName`
+  		,`videoTitle`
+  		,`videoactor`
+  		,`videoday`
+  		,`content`
+  		,`imagePath`
+  		,`createdAt`
+  		,`updatedAt`
+  	FROM
+  	 	`videopost`
+  
+  
+  </select>
+  
+   <select id="selectVideoPost" parameterType="int" resultType="com.baemongsil.ex.list.model.VideoPost" >
+  
+  		SELECT
+  		`id`
+  		,`userid`
+  		,`userName`
+  		,`videoTitle`
+  		,`videoactor`
+  		,`videoday`
+  		,`content`
+  		,`imagePath`
+  		,`createdAt`
+  		,`updatedAt`
+  	FROM
+  	 	`videopost`
+  	WHERE
+  		`id` = #{id}
+  
+  
+  </select>
+  
+  <delete id="deleteBookList" parameterType="int">
+  
+  
+  	DELETE
+  	FROM
+  		`bookpost`
+  	WHERE
+  		`id` = #{id};
+  </delete>
+  
+  
+  		
+  <delete id="deleteVideoLsit" parameterType="int">
+  	
+  	DELETE
+  	FROM
+  		`videopost`
+  	WHERE
+  		`id` = #{id};
+  		
+  </delete>
+  
+  </mapper>

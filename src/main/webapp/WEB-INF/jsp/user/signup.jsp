@@ -70,7 +70,7 @@
 			$("#signUpBtn").on("click",function(){
 				let loginId = $("#idInput").val();
 				let password = $("#passwordInput").val();
-				let passwordConfirm = $("passwordConfirmInput").val();
+				let passwordConfirm = $("#passwordConfirmInput").val();
 				let nickname = $("#nicknameInput").val();
 				let email = $("#emailInput").val();
 				

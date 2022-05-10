@@ -165,6 +165,7 @@
 					success:function(data){
 						if(data.result == "success"){
 							alert("업로드 성공");
+							location.href = "/list/book/listpage";
 						}else{
 							alert("업로드 실패");
 						}
@@ -226,7 +227,7 @@
 					success:function(data){
 						if(data.result == "success"){
 							alert("업로드성공");
-							location.href = "/list/videolist";
+							location.href = "/list/video/listpage";
 						
 						}else{
 							alert("업로드 실패 ");

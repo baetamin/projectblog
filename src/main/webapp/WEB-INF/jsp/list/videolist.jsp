@@ -27,32 +27,75 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/common/header.jsp"/>
 		<c:import url="/WEB-INF/jsp/common/nav.jsp"/>
-	
+		
+			
 			<div class="mt-5 ">
 				<table class="table ">
 				  <thead class="thead">
 				    <tr>
-				      <th scope="col">#</th>
+				      <th scope="col">No.</th>
 				      <th scope="col">title</th>
-				      <th scope="col">review</th>
 				      <th scope="col">nickname</th>
+				      <th scope="col">review</th>
 				      <th scope="col">like</th>
+				       <th scope="col"></th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Mark</td>
-				      <td>Otto</td>
-				      <td>@mdo</td>
-				      <td>3239302</td>
-				    </tr>
-				    
+				  	<c:forEach var="video" items="${videolist }" varStatus="status">
+					    <tr>
+					      <th scope="row">${status.count}</th>
+					      <td><a href="/list/video/detailpage?id=${video.id}">${video.videoTitle }</a></td>
+					      <td>${video.userName }</td>
+					      <td>${video.content }</td>
+					      <td>3239302</td>
+					      	<c:if test="${video.userid == userId}">
+					       <td><button type="button" class="deleteBtn btn btn-danger btn-sm" data-video-id="${video.id}">삭제</button></td>
+					   		</c:if>
+					    </tr>
+				    </c:forEach>
 				   </tbody>
 			</div>
 	
 		<c:import url="/WEB-INF/jsp/common/footer.jsp"/>	
 	</div>
 
+	<script>
+		$(document).ready(function(){
+			
+			$(".deleteBtn").on("click",function(){
+				var deleteId = $(this).data("video-id");
+				
+				$.ajax({
+					type:"GET",
+					url:"/list/delete/videolist",
+					data:{"id" : deleteId},
+					success:function(data){
+						if(data.result == "success"){
+							alert("삭제 성공");
+							location.reload();
+						}else{
+							alert("삭제 실패");
+							
+						}
+						
+					}, error:function(e) {
+						alert("삭제 에러");
+					}
+					
+				});
+				
+			});
+			
+			
+		});
+	
+	</script>
+
+
+
 </body>
+
+
+
 </html>
