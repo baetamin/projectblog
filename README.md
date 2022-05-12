@@ -7,7 +7,7 @@
 
 ⏰ 개발 기간<br/>
 
-2022.03 ~ 2021.05<br/>
+2022.03 ~ 2022.05<br/>
 계속해서 기능 추가 예정 💬<br/>
 
 
@@ -24,12 +24,11 @@ MySQL
 AWS
 
 
-🤓 기획 및 설계
-📊 프로젝트 칸반보드
+🤓 기획 및 설계<br/>
 
-🛠 기능 명세서
 
 🖥 페이지 기획서 페이지 기획서
+https://ovenapp.io/view/LVN8f1kPIZdSxMh4GITOZaTE7IVlHiaE
 
 📑 API 설계
 
