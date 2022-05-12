@@ -27,7 +27,7 @@ AWS
 🤓 기획 및 설계<br/>
 
 
-🖥 페이지 기획서 페이지 기획서
+🖥 페이지 기획서 페이지 기획서<br/>
 https://ovenapp.io/view/LVN8f1kPIZdSxMh4GITOZaTE7IVlHiaE
 
 📑 API 설계
